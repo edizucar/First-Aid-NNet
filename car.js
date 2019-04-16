@@ -2,21 +2,23 @@ class Car{
     constructor(){
         this.moving = false;
         this.movement_speed = 2;
-        this.direction = p5.Vector.fromAngle(0); // Vector (ALL in RADIANS) ---> magnitude of 1
+        this.direction = p5.Vector.fromAngle(Math.PI); // Vector (ALL in RADIANS) ---> magnitude of 1
+
+        // In p5 js 0 degrees means going to the right...
+        // Therefore PI degrees is to the left
+
         this.pos = createVector(width/2, height/2);
 
     }
 
     turnLeft(){
-        let currDir = this.direction.heading() - 0.01;
-        currDir = currDir % 2*Math.PI;
-        this.direction = p5.Vector.fromAngle(currDir);
+
+        this.direction.rotate(radians(-10));
     }
 
     turnRight(){
-        let currDir = this.direction.heading() + 0.01;
-        currDir = currDir % 2*Math.PI;
-        this.direction = p5.Vector.fromAngle(currDir);
+
+        this.direction.rotate(radians(10));
     }
 
     triggerMovement() {
