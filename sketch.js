@@ -10,6 +10,9 @@ function setup() {
 
 
 function draw() {
+    // Reseting background
+    background(100);
+
 
     CAR.update();
     CAR.draw();
