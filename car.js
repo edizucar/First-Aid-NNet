@@ -4,6 +4,9 @@ class Car{
         this.movement_speed = 2;
         this.direction = p5.Vector.fromAngle(Math.PI); // Vector (ALL in RADIANS) ---> magnitude of 1
 
+        this.width = 20;
+        this.height = 20;
+
         // In p5 js 0 degrees means going to the right...
         // Therefore PI degrees is to the left
 
@@ -32,8 +35,18 @@ class Car{
     }
 
     draw() {
+
+        push();
+
         fill(255,255,0);
-        rect(this.pos.x, this.pos.y, 20, 20);
+
+        translate(this.pos.x + this.width/2, this.pos.y + this.height/2);
+        rotate(this.direction.heading());
+
+        rect(-this.width/2, -this.height/2, this.width, this.height);
+
+        pop();
+
     }
 
 
