@@ -20,19 +20,15 @@ function draw() {
 
     //keyCodes found at : http://keycode.info/
     // Key Press Check ---- No Delay
-    if (keyIsPressed) {
-
-        if (keyCode == 37) {   // Detects for left arrow
-            CAR.turnLeft();
-
-        } 
-
-        if (keyCode == 39) {   // Detects for right arrow
-            CAR.turnRight();
-
-        }
-
+    
+    if (keyIsDown(37)) { // Detects for left arrow
+        CAR.turnLeft();
     }
+
+    if (keyIsDown(39)) { // Detects for right arrow
+        CAR.turnRight();
+    }
+    
 
 
 

@@ -16,12 +16,12 @@ class Car{
 
     turnLeft(){
 
-        this.direction.rotate(radians(-10));
+        this.direction.rotate(radians(-3));
     }
 
     turnRight(){
 
-        this.direction.rotate(radians(10));
+        this.direction.rotate(radians(3));
     }
 
     triggerMovement() {
