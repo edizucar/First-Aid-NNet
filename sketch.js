@@ -1,3 +1,5 @@
+//Let's go dude what a mad one we are on right now lads I can't even believe how much of a mad thing this boy is on right now?
+
 let CAR;
 let keyPressDelay = 10; 
 
