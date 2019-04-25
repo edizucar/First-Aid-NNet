@@ -1,11 +1,13 @@
 //Let's go dude what a mad one we are on right now lads I can't even believe how much of a mad thing this boy is on right now?
 
 let CAR;
+let MY_OBSTACLE;
 let keyPressDelay = 10;
 
 function setup() {
     createCanvas(800,800);
     CAR = new Car();
+    MY_OBSTACLE = new Obstacle(200,200,50,10,0);
 }
 
 function draw() {
@@ -34,4 +36,5 @@ function draw() {
     keyPressDelay++;
 
     CAR.draw();
+    MY_OBSTACLE.draw();
 }

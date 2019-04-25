@@ -32,7 +32,7 @@ class Car{
         this.pos.sub(this.direction);
     }
 
-    draw() {
+    draw(){
 
         push();
 
