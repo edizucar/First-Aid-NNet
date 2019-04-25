@@ -1,24 +1,16 @@
 //Let's go dude what a mad one we are on right now lads I can't even believe how much of a mad thing this boy is on right now?
 
 let CAR;
-let keyPressDelay = 10; 
+let keyPressDelay = 10;
 
 function setup() {
     createCanvas(800,800);
     CAR = new Car();
-    CAR.triggerMovement();
-
 }
-
 
 function draw() {
     // Reseting background
     background(100);
-
-
-    CAR.update();
-    CAR.draw();
-
 
     //keyCodes found at : http://keycode.info/
     // Key Press Check ---- No Delay
@@ -31,29 +23,15 @@ function draw() {
         CAR.turnRight();
     }
     
-
-
-
-
-    // KEY PRESS CHECK ---- WITH DELAY
-    if (keyIsPressed && keyPressDelay > 10) {
-        
-
-        if (keyCode == 32) {    // Detects for Space pressed
-
-            CAR.triggerMovement();
-        }
-
-
-        keyIsPressed  = 0;
+    if (keyIsDown(38)) { // Detects for up arrow
+        CAR.forward();
     }
 
-
-
-
-
-
-
+    if (keyIsDown(40)) { // Detects for down arrow
+        CAR.backward();
+    }
 
     keyPressDelay++;
+
+    CAR.draw();
 }

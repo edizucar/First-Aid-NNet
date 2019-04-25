@@ -1,6 +1,5 @@
 class Car{
     constructor(){
-        this.moving = false;
         this.movement_speed = 2;
         this.direction = p5.Vector.fromAngle(Math.PI); // Vector (ALL in RADIANS) ---> magnitude of 1
 
@@ -11,7 +10,6 @@ class Car{
         // Therefore PI degrees is to the left
 
         this.pos = createVector(width/2, height/2);
-
     }
 
     turnLeft(){
@@ -24,14 +22,14 @@ class Car{
         this.direction.rotate(radians(3));
     }
 
-    triggerMovement() {
-        this.moving = !this.moving;
+    forward(){
+
+        this.pos.add(this.direction);
     }
 
-    update() {
-        if (this.moving){
-            this.pos.add(this.direction);
-        }
+    backward(){
+
+        this.pos.sub(this.direction);
     }
 
     draw() {
