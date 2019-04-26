@@ -1,5 +1,3 @@
-// Testing that new branch is open
-
 class Car{
     constructor(){
         this.movement_speed = 2;
