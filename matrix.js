@@ -61,7 +61,27 @@ class Matrix{
 	}
   }
 	
-	
+  dotProduct(matrix) {
+	  // Finish this
+	  let result = new Matrix(this.rows, matrix.cols);
+	  if (this.cols == matrix.rows) {
+		  
+		  for (var i = 0; i < this.rows; i++) {
+			  for (var j = 0; j < matrix.cols; j++) {
+				  let sum = 0;
+				  for (var z = 0; z < this.cols;z++) {
+					sum += this.Mat[i][z] * matrix.Mat[z][j];
+				  }
+				  result.Mat[i][j] = sum;
+			  }
+		  }
+		  return result
+	}
+	else {
+		console.log("Incorrect matrix dimensions for multiplication")
+		return -1;
+	}
+  }	
 	
 	
 }
