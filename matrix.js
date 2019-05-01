@@ -24,8 +24,10 @@ class Matrix{
         this.Mat[i][j] = floor(random(x1, x2 + 1));
       }
     }     
+  }
+	
+  getItem(row, col){
+    return this.Mat[row][col];
   }	
-	
-	
   
 }
