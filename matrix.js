@@ -38,6 +38,17 @@ class Matrix{
     }     
   }	
 	
+  scale(multiplier) {
+    for (var i = 0; i < this.rows; i++) {
+      for (var j = 0; j < this.cols; j++) {
+        this.Mat[i][j] *= multiplier;
+      }
+    }     
+    
+  }	
+	
+
+	
 	
 	
 	
