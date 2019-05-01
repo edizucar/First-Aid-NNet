@@ -12,7 +12,14 @@ class Matrix{
         this.Mat[i].push(0.0);
       }
     }
-    
   }
+
+  display() {
+    console.table(this.Mat);
+  }
+	
+	
+	
+	
   
 }
