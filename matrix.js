@@ -29,5 +29,16 @@ class Matrix{
   getItem(row, col){
     return this.Mat[row][col];
   }	
-  
+
+  addNum(number) {
+    for (var i = 0; i < this.rows; i++) {
+      for (var j = 0; j < this.cols; j++) {
+        this.Mat[i][j] += number;
+      }
+    }     
+  }	
+	
+	
+	
+	
 }
