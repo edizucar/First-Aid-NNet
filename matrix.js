@@ -47,7 +47,19 @@ class Matrix{
     
   }	
 	
-
+  addMat(matrix) {
+    // add try except clause for matricies of incorrect dimesions
+    if (this.rows == matrix.rows && this.cols == matrix.cols){
+		for (var i = 0; i < this.rows; i++) {
+		  for (var j = 0; j < this.cols; j++) {
+			this.Mat[i][j] += matrix.Mat[i][j];
+		  }
+		}
+	}
+	else{
+		console.log("Incorrect matrix dimensions for addition");
+	}
+  }
 	
 	
 	
