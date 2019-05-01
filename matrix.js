@@ -82,6 +82,21 @@ class Matrix{
 		return -1;
 	}
   }	
+
+	
+  getMatClone() {
+    var clone = [];
+    
+    for (var i = 0; i < this.rows; i++) {
+      clone.push([]);
+      for (var j = 0; j < this.cols; j++) {
+        clone[i].push(this.Mat[i][j]);
+      }
+    } 
+    
+    return clone;
+  }	
+	
 	
 	
 }
