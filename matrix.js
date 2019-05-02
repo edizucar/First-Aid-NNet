@@ -95,7 +95,15 @@ class Matrix{
     } 
     
     return clone;
-  }	
+  }
+	
+  map(activation) {
+    for (var i = 0; i < this.rows; i++) {
+      for (var j = 0; j < this.cols; j++) {
+        this.Mat[i][j] = activation(this.Mat[i][j]);
+      }
+    } 
+  }
 	
 	
 	
