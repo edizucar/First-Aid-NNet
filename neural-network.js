@@ -12,14 +12,23 @@ class NeuralNetwork {
 		this.inputCount = inputs;
 		
 		this.hiddenLayerCount = [];
-		for (int i=0;i<hiddenLayers.length;i++) {
+		for (var i=0; i < hiddenLayers.length; i++) {
 			this.hiddenLayerCount.push(hiddenLayers[i]);
 		}
 		
 		this.outputCount = outputs;
 		
+		this.weightsAndBiases = [];
+
+		this.weightsAndBiases.push(this.inputCount, this.hiddenLayerCount[0]);
 		
-		
+		for (var i = 1; i < this.hiddenLayersCount.length - 2; i++){
+			this.weightsAndBiases.push(this.hiddenLayerCount[i], this.hiddenLayerCount[i+1]);
+
+		}
+
+		this.weightsAndBiases.push(new Matrix(this.hiddenLayerCount[this.hiddenLayersCount.length - 1], this.outputCount));
+
 		
 		
 		
