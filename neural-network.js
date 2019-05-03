@@ -19,8 +19,8 @@ class NeuralNetwork {
 		this.weightCounts.push(outputs);
 		
 		this.weightsAndBiases = [];
-		for (var i = 1; i < this.weightCounts.length - 1; i++) {
-			this.weightsAndBiases.push(new Matrix(this.weightCounts[i], this.weights[i-1]));
+		for (var i = 1; i < this.weightCounts.length; i++) {
+			this.weightsAndBiases.push(new Matrix(this.weightCounts[i], this.weightCounts[i-1]));
 		}
 
 
@@ -39,6 +39,19 @@ class NeuralNetwork {
 		for (var i = 0; i < this.weightsAndBiases.length; i++) {
 			this.weightsAndBiases[i].randomize(x1,x2);
 		}		
+	}
+
+	feedForward(input, layer = 0){
+		// input -> a matrix of the inputs
+
+		if (layer < this.weightsAndBiases.length){
+			let result = this.weightsAndBiases[layer].dotProduct(input);
+			result.display();
+			return this.feedForward(result, layer + 1);
+		}
+		else {
+			return input;
+		}
 	}
 
 }
