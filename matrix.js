@@ -18,7 +18,7 @@ class Matrix{
     console.table(this.Mat);
   }
 	
-  randomize(x1, x2) {
+  randomize(x1=1, x2=10) {
     for (var i = 0; i < this.rows; i++) {
       for (var j = 0; j < this.cols; j++) {
         this.Mat[i][j] = floor(random(x1, x2 + 1));
