@@ -41,5 +41,18 @@ class NeuralNetwork {
 			this.weightsAndBiases[i].randomize(x1,x2);
 		}		
 	}
+
+	feedForward(inputs,layer = 0) {
+		//inputs -> a Matrix of the inputs
+		// This is a recursive method -> user should call with no argument for layer parameter.
+
+		if (layer != this.weightsAndBiases - 1) {
+			let result = this.weightsAndBiases[layer].dotProduct(inputs);
+			return this.feedForward(result, layer + 1);
+		}
+		else {
+			return inputs.getMatClone();
+		}
+	}
 	
 }

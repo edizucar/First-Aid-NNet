@@ -62,7 +62,9 @@ class Matrix{
   }
 	
   dotProduct(matrix) {
-	  // Finish this
+    // 'this' is the left hand matrix (uses rows)
+    // 'matrix' is the right hand matrix (uses columns)
+    
 	  let result = new Matrix(this.rows, matrix.cols);
 	  if (this.cols == matrix.rows) {
 		  
