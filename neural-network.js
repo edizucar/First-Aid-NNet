@@ -20,18 +20,20 @@ class NeuralNetwork {
 		
 		this.weightsAndBiases = [];
 
-		this.weightsAndBiases.push(this.inputCount, this.hiddenLayerCount[0]);
+		this.weightsAndBiases.push(new Matrix(this.hiddenLayerCount[0],this.inputCount));
 		
-		for (var i = 1; i < this.hiddenLayersCount.length - 2; i++){
-			this.weightsAndBiases.push(this.hiddenLayerCount[i], this.hiddenLayerCount[i+1]);
+		for (var i = 1; i < this.hiddenLayerCount.length - 2; i++){
+			this.weightsAndBiases.push(new Matrix(this.hiddenLayerCount[i+1], this.hiddenLayerCount[i]));
 
 		}
 
-		this.weightsAndBiases.push(new Matrix(this.hiddenLayerCount[this.hiddenLayersCount.length - 1], this.outputCount));
-
-		
-		
-		
-	}	
+		this.weightsAndBiases.push(new Matrix(this.outputCount, this.hiddenLayerCount[this.hiddenLayerCount.length - 1]));	
+	}
+	
+	display() {
+		for (var i = 0; i < this.weightsAndBiases.length; i++) {
+			this.weightsAndBiases[i].display();
+		}
+	}
 	
 }

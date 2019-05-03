@@ -7,7 +7,7 @@ function setup() {
     createCanvas(800,800);
     CAR = new Car();
     MY_OBSTACLE = new Obstacle(200,200,50,10,0);
-    NN = new NeuralNetwork(2,3,1);
+    NN = new NeuralNetwork(2,[3],1);
 }
 
 function draw() {
