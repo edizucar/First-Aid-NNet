@@ -9,25 +9,24 @@ class NeuralNetwork {
 			
 			This is a fully connected neural network structure.
 		*/
-		this.inputCount = inputs;
-		
-		this.hiddenLayerCount = [];
+		this.weightCounts = [];
+		this.weightCounts.push(inputs);
+
 		for (var i=0; i < hiddenLayers.length; i++) {
-			this.hiddenLayerCount.push(hiddenLayers[i]);
+			this.weightCounts.push(hiddenLayers[i]);
 		}
 		
-		this.outputCount = outputs;
+		this.weightCounts.push(outputs);
 		
 		this.weightsAndBiases = [];
-
-		this.weightsAndBiases.push(new Matrix(this.hiddenLayerCount[0],this.inputCount));
-		
-		for (var i = 1; i < this.hiddenLayerCount.length - 2; i++){
-			this.weightsAndBiases.push(new Matrix(this.hiddenLayerCount[i+1], this.hiddenLayerCount[i]));
-
+		for (var i = 1; i < this.weightCounts.length - 1; i++) {
+			this.weightsAndBiases.push(new Matrix(this.weightCounts[i], this.weights[i-1]));
 		}
 
-		this.weightsAndBiases.push(new Matrix(this.outputCount, this.hiddenLayerCount[this.hiddenLayerCount.length - 1]));	
+
+
+		
+
 	}
 	
 	display() {
@@ -42,17 +41,4 @@ class NeuralNetwork {
 		}		
 	}
 
-	feedForward(inputs,layer = 0) {
-		//inputs -> a Matrix of the inputs
-		// This is a recursive method -> user should call with no argument for layer parameter.
-
-		if (layer != this.weightsAndBiases - 1) {
-			let result = this.weightsAndBiases[layer].dotProduct(inputs);
-			return this.feedForward(result, layer + 1);
-		}
-		else {
-			return inputs.getMatClone();
-		}
-	}
-	
 }
