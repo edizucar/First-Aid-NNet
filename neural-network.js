@@ -35,5 +35,11 @@ class NeuralNetwork {
 			this.weightsAndBiases[i].display();
 		}
 	}
+
+	randomize(x1=1, x2=10){
+		for (var i = 0; i < this.weightsAndBiases.length; i++) {
+			this.weightsAndBiases[i].randomize(x1,x2);
+		}		
+	}
 	
 }
