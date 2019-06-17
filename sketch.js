@@ -8,13 +8,6 @@ function setup() {
     CAR = new Car();
     MY_OBSTACLE = new Obstacle(200,200,50,10,0);
     NN = new NeuralNetwork(2,[3],1);
-
-    if (collideLineLine(1,1,-1,-1,1,-1,-1,1)){
-        console.log("collide");
-    }
-    else{
-        console.log("yeet");
-    }
 }
 
 function draw() {

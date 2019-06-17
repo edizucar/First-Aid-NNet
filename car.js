@@ -32,16 +32,25 @@ class Car{
         this.pos.sub(this.direction);
     }
 
+    collideObstacle(obs) {
+        // Obs is an obstacle to check whether the car is colliding with it
+
+        
+
+    }
+
     draw(){
 
         push();
 
         fill(255,255,0);
 
-        translate(this.pos.x + this.width/2, this.pos.y + this.height/2);
+        rectMode(CENTER);
+
+        translate(this.pos.x, this.pos.y);
         rotate(this.direction.heading());
 
-        rect(-this.width/2, -this.height/2, this.width, this.height);
+        rect(0, 0, this.width, this.height);
 
         pop();
 
