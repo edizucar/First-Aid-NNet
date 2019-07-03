@@ -9,7 +9,7 @@ function setup() {
     MY_OBSTACLE = new Obstacle(200,200,50,10,0);
     NN = new NeuralNetwork(2,[3],1);
 }
-
+//Dan was here :-)
 function draw() {
     // Reseting background
     background(100);
