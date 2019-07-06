@@ -10,6 +10,7 @@ function setup() {
     NN = new NeuralNetwork(2,[3],1);
 }
 //Dan was here :-)
+//Ahmet was here too  
 function draw() {
     // Reseting background
     background(100);
